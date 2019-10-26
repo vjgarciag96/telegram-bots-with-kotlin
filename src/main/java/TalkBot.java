@@ -18,7 +18,9 @@ public class TalkBot {
         TelegramBot telegramBot = new TelegramBot("976951878:AAETlyNbC0ocEilDj...");
         telegramBot.setUpdatesListener(updates -> {
             updates.forEach(update -> {
-                if (update.message() != null && update.message().text().equals("/sayHi")) {
+                if (update.message() != null
+                        && update.message().text() != null
+                        && update.message().text().equals("/sayHi")) {
                     sayHi(telegramBot, update.message());
                     return;
                 }
