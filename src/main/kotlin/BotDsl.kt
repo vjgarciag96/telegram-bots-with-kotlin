@@ -32,7 +32,9 @@ class CommandHandler(
 ) : UpdateHandler {
 
     override fun checkUpdate(update: Update): Boolean =
-        update.message() != null && update.message().text().startsWith("/$commandName")
+        update.message() != null
+                && update.message().text() != null
+                && update.message().text().startsWith("/$commandName")
 
     override fun handle(bot: Bot, update: Update) {
         val command = update.message()
