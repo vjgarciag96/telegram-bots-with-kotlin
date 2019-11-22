@@ -20,7 +20,7 @@ public class TalkBot {
             updates.forEach(update -> {
                 if (update.message() != null
                         && update.message().text() != null
-                        && update.message().text().equals("/sayHi")) {
+                        && update.message().text().equals("/padrino")) {
                     sayHi(telegramBot, update.message());
                     return;
                 }
@@ -36,7 +36,7 @@ public class TalkBot {
 
     private static void sayHi(TelegramBot telegramBot, Message message) {
         long chatId = message.chat().id();
-        telegramBot.execute(new SendMessage(chatId, "Hello Tuenti!!"));
+        telegramBot.execute(new SendMessage(chatId, "Algún día, y ese día puede que no llegue, acudiré a ti y tendrás que servirme"));
     }
 
     private static void showGithubReposSearchResults(TelegramBot telegramBot, InlineQuery inlineQuery) {

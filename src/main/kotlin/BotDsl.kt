@@ -85,7 +85,11 @@ class Bot(token: String, private val handlers: List<UpdateHandler>) {
     }
 }
 
-fun bot(botToken: String, body: BotBuilder.() -> Unit): Bot = BotBuilder().build(botToken, body)
+fun bot(botToken: String, body: BotBuilder.() -> Unit): Bot {
+    val bot = BotBuilder().build(botToken, body)
+    bot.startPolling()
+    return bot
+}
 
 
 

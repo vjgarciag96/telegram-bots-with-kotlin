@@ -5,17 +5,17 @@ import java.util.*
 
 fun main() {
     bot("976951878:AAETlyNbC0ocEilDjq09h...") {
-        command("sayHi") { bot, message ->
+        command("padrino") { bot, message ->
             bot.sayHi(message.chat().id())
         }
         inlineQuery { bot, inlineQuery ->
             bot.showGithubReposSearchResult(inlineQuery)
         }
-    }.startPolling()
+    }
 }
 
 private fun Bot.sayHi(chatId: Long) {
-    sendMessage(chatId, "Hello Tuenti!!")
+    sendMessage(chatId, "Algún día, y ese día puede que no llegue, acudiré a ti y tendrás que servirme")
 }
 
 private fun Bot.showGithubReposSearchResult(inlineQuery: InlineQuery) {
